@@ -38,7 +38,7 @@ package() {
   mkdir -p "${pkgdir}"/opt
   mkdir -p "${pkgdir}"/usr/share/applications
   mkdir -p "${pkgdir}"/usr/share/icons/GoogleClassroom
-  cp "${srcdir}"/GoogleClassroom* "${pkgdir}"/opt/GoogleClassroom
+  cp -r "${srcdir}"/GoogleClassroom* "${pkgdir}"/opt/GoogleClassroom
   cp "${pkgname}".desktop "${pkgdir}"/usr/share/applications
   cp "${srcdir}"/"${pkgname}.png" "${pkgdir}"/usr/share/icons/GoogleClassroom
   chmod +x "${pkgdir}"/opt/GoogleClassroom/GoogleClassroom
