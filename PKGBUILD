@@ -2,7 +2,7 @@
 
 pkgname=google-classroom-nativefier
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Google Classroom Desktop build with Nativefier"
 arch=("any")
 url='https://classroom.google.com/?emr=0'
@@ -20,7 +20,7 @@ sha256sums=(
 
 prepare(){
   cd "${srcdir}"
-  npm i -g nativefier
+  sudo npm i -g nativefier
 }
 
 build() {
@@ -38,8 +38,8 @@ package() {
   mkdir -p "${pkgdir}"/opt
   mkdir -p "${pkgdir}"/usr/share/applications
   mkdir -p "${pkgdir}"/usr/share/icons/GoogleClassroom
-  mv "${srcdir}"/GoogleClassroom* "${pkgdir}"/opt/GoogleClassroom
-  mv "${pkgname}".desktop "${pkgdir}"/usr/share/applications
-  mv "${srcdir}"/"${pkgname}.png" "${pkgdir}"/usr/share/icons/GoogleClassroom
+  cp "${srcdir}"/GoogleClassroom* "${pkgdir}"/opt/GoogleClassroom
+  cp "${pkgname}".desktop "${pkgdir}"/usr/share/applications
+  cp "${srcdir}"/"${pkgname}.png" "${pkgdir}"/usr/share/icons/GoogleClassroom
   chmod +x "${pkgdir}"/opt/GoogleClassroom/GoogleClassroom
 }
