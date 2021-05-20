@@ -1,7 +1,7 @@
 # Maintainer: Pichponereay NGOR <isaacjacksonreay at gmail dot com>
 
 pkgname=google-classroom-nativefier
-pkgver=1.1
+pkgver=2.0
 pkgrel=1
 pkgdesc="Google Classroom Desktop build with Nativefier"
 arch=("any")
@@ -49,5 +49,8 @@ package() {
 
   # install icon
   install -D -m755 "${srcdir}"/"${pkgname}.png" "${pkgdir}"/usr/share/icons/GoogleClassroom/"${pkgname}.png"
+
+  install -d -m755 "${pkgdir}/usr/bin"
+  ln -sr "${pkgdir}/opt/GoogleClassroom/GoogleClassroom" "${pkgdir}/usr/bin/${pkgname}"
 
 }

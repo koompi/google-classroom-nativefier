@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Google Classroom
 Comment=Google Classroom desktop built with nativefier (electron)
-Exec=/opt/GoogleClassroom/GoogleClassroom
+Exec=/usr/bin/google-classroom-nativefier
 Icon=/usr/share/icons/GoogleClassroom/google-classroom-nativefier.png
 Encoding=UTF-8
 Terminal=false
